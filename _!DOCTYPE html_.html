@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autocuidado Diario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .container {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        #mensaje {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container animate__animated animate__fadeIn">
+        <h1 class="text-white">Tu Pausa de Autocuidado</h1>
+        <button class="btn btn-primary mt-3" onclick="mostrarMensaje()">¿Qué necesito hoy?</button>
+        <p id="mensaje" class="mt-4 text-white"></p>
+    </div>
+
+    <script>
+        const mensajes = [
+            "🌿 Respira profundo y relájate.",
+            "💧 Hidrátate, tu cuerpo te lo agradecerá.",
+            "🌞 Da un paseo al aire libre.",
+            "📖 Lee algo que te inspire.",
+            "🎶 Escucha tu canción favorita.",
+            "🧘‍♂️ Haz una pausa y estira tu cuerpo.",
+            "💡 Escribe tres cosas por las que estás agradecido hoy.",
+            "🎨 Dedica un momento a hacer algo creativo.",
+            "🍏 Disfruta de un snack saludable.",
+            "🛁 Date un baño relajante."
+        ];
+
+        function mostrarMensaje() {
+            const mensajeElemento = document.getElementById("mensaje");
+            const mensajeAleatorio = mensajes[Math.floor(Math.random() * mensajes.length)];
+            mensajeElemento.textContent = mensajeAleatorio;
+            mensajeElemento.classList.add("animate__animated", "animate__fadeIn");
+        }
+    </script>
+</body>
+</html>
